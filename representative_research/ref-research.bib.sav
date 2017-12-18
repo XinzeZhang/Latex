@@ -1,0 +1,232 @@
+% Encoding: UTF-8
+
+@Article{coussement2008improving,
+  author    = {Coussement, Kristof and Van den Poel, Dirk},
+  title     = {Improving customer complaint management by automatic email classification using linguistic style features as predictors},
+  journal   = {Decision Support Systems},
+  year      = {2008},
+  volume    = {44},
+  number    = {4},
+  pages     = {870--882},
+  publisher = {Elsevier},
+}
+
+@Article{jin2016makes,
+  author    = {Jin, Jian and Ji, Ping and Kwong, CK},
+  title     = {What makes consumers unsatisfied with your products: Review analysis at a fine-grained level},
+  journal   = {Engineering Applications of Artificial Intelligence},
+  year      = {2016},
+  volume    = {47},
+  pages     = {38--48},
+  publisher = {Elsevier},
+}
+
+@InProceedings{hu2004mining,
+  author    = {Hu, Minqing and Liu, Bing},
+  title     = {Mining opinion features in customer reviews},
+  booktitle = {AAAI},
+  year      = {2004},
+  volume    = {4},
+  number    = {4},
+  pages     = {755--760},
+}
+
+@Article{lee2016mining,
+  author    = {Lee, Anthony JT and Yang, Fu-Chen and Chen, Chao-Hung and Wang, Chun-Sheng and Sun, Chih-Yuan},
+  title     = {Mining perceptual maps from consumer reviews},
+  journal   = {Decision Support Systems},
+  year      = {2016},
+  volume    = {82},
+  pages     = {12--25},
+  publisher = {Elsevier},
+}
+
+@InProceedings{tutubalina2015target,
+  author       = {Tutubalina, Elena},
+  title        = {Target-based topic model for problem phrase extraction},
+  booktitle    = {European Conference on Information Retrieval},
+  year         = {2015},
+  pages        = {271--277},
+  organization = {Springer},
+}
+
+@InProceedings{tutubalina2015dependency,
+  author       = {Tutubalina, Elena},
+  title        = {Dependency-based problem phrase extraction from user reviews of products},
+  booktitle    = {International Conference on Text, Speech, and Dialogue},
+  year         = {2015},
+  pages        = {199--206},
+  organization = {Springer},
+}
+
+@InProceedings{kurihara2015trouble,
+  author    = {Kurihara, Kohei and Shimada, Kazutaka},
+  title     = {Trouble information extraction based on a bootstrap approach from Twitter.},
+  booktitle = {PACLIC},
+  year      = {2015},
+}
+
+@InProceedings{solovyev2014dictionary,
+  author       = {Solovyev, Valery and Ivanov, Vladimir},
+  title        = {Dictionary-based problem phrase extraction from user reviews},
+  booktitle    = {International Conference on Text, Speech, and Dialogue},
+  year         = {2014},
+  pages        = {225--232},
+  organization = {Springer},
+}
+
+@InProceedings{ivanov2014clause,
+  author       = {Ivanov, Vladimir and Tutubalina, Elena},
+  title        = {Clause-based approach to extracting problem phrases from user reviews of products},
+  booktitle    = {International Conference on Analysis of Images, Social Networks and Texts},
+  year         = {2014},
+  pages        = {229--236},
+  organization = {Springer},
+}
+
+@InProceedings{moghaddam2012aspect,
+  author       = {Moghaddam, Samaneh and Ester, Martin},
+  title        = {Aspect-based opinion mining from product reviews},
+  booktitle    = {Proceedings of the 35th international ACM SIGIR conference on Research and development in information retrieval},
+  year         = {2012},
+  pages        = {1184--1184},
+  organization = {ACM},
+}
+
+@InProceedings{gupta2011extracting,
+  author    = {Gupta, Narendra K},
+  title     = {Extracting descriptions of problems with product and services from twitter data},
+  booktitle = {Proceedings of the 3rd Workshop on Social Web Search and Mining (SWSM2011). Beijing, China},
+  year      = {2011},
+}
+
+@InProceedings{de2008looking,
+  author       = {De Saeger, Stijn and Torisawa, Kentaro and Kazama, Jun'ichi},
+  title        = {Looking for trouble},
+  booktitle    = {Proceedings of the 22nd International Conference on Computational Linguistics-Volume 1},
+  year         = {2008},
+  pages        = {185--192},
+  organization = {Association for Computational Linguistics},
+}
+
+@InProceedings{liu2005opinion,
+  author       = {Liu, Bing and Hu, Minqing and Cheng, Junsheng},
+  title        = {Opinion observer: analyzing and comparing opinions on the web},
+  booktitle    = {Proceedings of the 14th international conference on World Wide Web},
+  year         = {2005},
+  pages        = {342--351},
+  organization = {ACM},
+}
+
+@Article{cortes1995support,
+  author    = {Cortes, Corinna and Vapnik, Vladimir},
+  title     = {Support-vector networks},
+  journal   = {Machine learning},
+  year      = {1995},
+  volume    = {20},
+  number    = {3},
+  pages     = {273--297},
+  publisher = {Springer},
+}
+
+@Misc{victor2017airlines,
+  author    = {Victor, Daniel and Stevens, Matt},
+  title     = {United Airlines passenger violently dragged from seat on overbooked flight},
+  year      = {2017},
+  publisher = {New York Times},
+}
+
+@Article{van2012online,
+  author    = {Van Noort, Guda and Willemsen, Lotte M},
+  title     = {Online damage control: The effects of proactive versus reactive webcare interventions in consumer-generated and brand-generated platforms},
+  journal   = {Journal of Interactive Marketing},
+  year      = {2012},
+  volume    = {26},
+  number    = {3},
+  pages     = {131--140},
+  publisher = {Elsevier},
+}
+
+@Article{woong2011selective,
+  author    = {Woong Yun, Gi and Park, Sung-Yeon},
+  title     = {Selective posting: Willingness to post a message online},
+  journal   = {Journal of Computer-Mediated Communication},
+  year      = {2011},
+  volume    = {16},
+  number    = {2},
+  pages     = {201--227},
+  publisher = {Wiley Online Library},
+}
+
+@Article{dellarocas2006strategic,
+  author    = {Dellarocas, Chrysanthos},
+  title     = {Strategic manipulation of internet opinion forums: Implications for consumers and firms},
+  journal   = {Management science},
+  year      = {2006},
+  volume    = {52},
+  number    = {10},
+  pages     = {1577--1593},
+  publisher = {INFORMS},
+}
+
+@Article{fornell1987defensive,
+  author    = {Fornell, Claes and Wernerfelt, Birger},
+  title     = {Defensive marketing strategy by customer complaint management: a theoretical analysis},
+  journal   = {Journal of Marketing research},
+  year      = {1987},
+  pages     = {337--346},
+  publisher = {JSTOR},
+}
+
+@Article{cai2016,
+  author  = {蔡淑琴 and 秦志勇 and 蒋士淼 and 袁乾},
+  title   = {基于回归树与衰减函数的在线负面口碑影响力预测},
+  journal = {系统工程理论与实践},
+  year    = {2016},
+  volume  = {36},
+  number  = {6},
+  pages   = {1496--1504},
+}
+
+@InProceedings{cheng2015exploiting,
+  author       = {Cheng, Xiang and Zhu, Shuguang and Chen, Gang and Su, Sen},
+  title        = {Exploiting user feedback for expert finding in community question answering},
+  booktitle    = {Data Mining Workshop (ICDMW), 2015 IEEE International Conference on},
+  year         = {2015},
+  pages        = {295--302},
+  organization = {IEEE},
+}
+
+@Article{noble2012let,
+  author    = {Noble, Charles H and Noble, Stephanie M and Adjei, Mavis T},
+  title     = {Let them talk! Managing primary and extended online brand communities for success},
+  journal   = {Business horizons},
+  year      = {2012},
+  volume    = {55},
+  number    = {5},
+  pages     = {475--483},
+  publisher = {Elsevier},
+}
+
+@Article{cha2010measuring,
+  author  = {Cha, Meeyoung and Haddadi, Hamed and Benevenuto, Fabricio and Gummadi, P Krishna},
+  title   = {Measuring user influence in twitter: The million follower fallacy.},
+  journal = {Icwsm},
+  year    = {2010},
+  volume  = {10},
+  number  = {10-17},
+  pages   = {30},
+}
+
+@Article{kim2007best,
+  author    = {Kim, Soojung and Oh, Jung Sun and Oh, Sanghee},
+  title     = {Best-answer selection criteria in a social Q\&A site from the user-oriented relevance perspective},
+  journal   = {Proceedings of the Association for Information Science and Technology},
+  year      = {2007},
+  volume    = {44},
+  number    = {1},
+  pages     = {1--15},
+  publisher = {Wiley Online Library},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

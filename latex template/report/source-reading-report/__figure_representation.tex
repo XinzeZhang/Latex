@@ -1,0 +1,143 @@
+\begin{figure*}[ht!]
+\centering
+\newcommand{\turnA}{I want the books and the hats, you get the ball}
+\newcommand{\turnB}{Give me a book too and we have a deal}
+\newcommand{\turnC}{Ok, deal}
+\newcommand{\turnD}{\textless choose\textgreater}
+\newcommand{\choiceA}{2x\textit{book} 2x\textit{hat}}
+\newcommand{\choiceB}{1x\textit{book} 1x\textit{ball}}
+
+\newcommand{\itemvalue}[3]{#2x\textit{#1} & \textit{value}=#3}
+\newcommand{\bookA}{\itemvalue{book}{3}{1}}
+\newcommand{\hatA}{\itemvalue{hat}{2}{3}}
+\newcommand{\ballA}{\itemvalue{ball}{1}{1}}
+
+\newcommand{\bookB}{\itemvalue{book}{3}{2}}
+\newcommand{\hatB}{\itemvalue{hat}{2}{1}}
+\newcommand{\ballB}{\itemvalue{ball}{1}{2}}
+
+\newcommand{\goals}[3]{
+\setlength{\tabcolsep}{0.2em} % for the horizontal padding
+\begin{tabular}{ll}
+     #1\\#2\\#3
+\end{tabular}
+}
+
+
+\tikzstyle{arrow} = [thick,->]
+\tikzset{>=latex}
+
+\begin{tikzpicture} 
+  \tikzstyle{box} = [rectangle, rounded corners, font=\sffamily\footnotesize, text width=2.45cm, draw=black]
+  
+  
+      \node [box, draw=black, thick, fill = white, minimum width = 6.7cm, minimum height = 8cm]  at (current page.north west) (raw)
+    {};
+    
+    \node[below right] at (raw.north west) (rawlabel) {\underline{\bfseries Crowd Sourced Dialogue
+}};
+    
+  
+    \node [box, fill=blue!30, text width      = 2.45cm, below=0.0cm of rawlabel.south west, anchor=north west, xshift=0.2cm]
+    (User1Goals)
+    {\underline{\bfseries Agent 1 Input}\\
+      \goals{\bookA}{\hatA}{\ballA}   
+     };
+     
+    \node [box, right = 0.8cm of User1Goals, fill = blue!30, text width      = 2.45cm]
+    (User2Goals)
+    {\underline{\bfseries Agent 2 Input}\\
+      \goals{\bookB}{\hatB}{\ballB}   
+    };
+      
+    \node [box, below = 0.9cm of User1Goals.south west, anchor=north west, fill = yellow, text width      = 6cm]
+    (Dialog)
+    {\underline{\bfseries Dialogue}\\
+      \textbf{Agent 1:} \turnA\\
+      \textbf{Agent 2:} \turnB\\
+      \textbf{Agent 1:} \turnC\\
+      \textbf{Agent 2:} \turnD\\
+
+    }; 
+    
+    \node [box, below = 0.8cm of Dialog.south west, anchor=north west, fill = red!30, text width=2.3cm]
+    (User1Choice)
+    {\underline{\bfseries Agent 1 Output}\\
+      \choiceA\\      
+    };
+
+    \node [box, right = 1.2cm of User1Choice, fill = red!30, text width=2.3cm]
+    (User2Choice)
+    {\underline{\bfseries Agent 2 Output}\\
+      \choiceB\\      
+    };
+
+
+    \node [box, right = 1cm of raw.north east, ,anchor=north west, draw=black, thick, fill = white, minimum width = 8cm, minimum height = 3.75cm] (perspective1)
+    {};
+    
+    
+    \draw [arrow] (User1Goals) -- (Dialog);
+    \draw [arrow] (User2Goals) -- (Dialog);
+    \draw [arrow] (Dialog) -- (User1Choice);
+    \draw [arrow] (Dialog) -- (User2Choice);
+
+    
+    
+    \node[below right] at (perspective1.north west) (perspective1label) {\underline{\bfseries Perspective: Agent 1}};
+
+
+    \node [box, below = 0.5cm of perspective1, draw=black, thick, fill = white, minimum width = 8cm, minimum height = 3.75cm] (perspective2)
+    {};
+    
+    \node[below right] at (perspective2.north west) (perspective2label) {\underline{\bfseries Perspective: Agent 2}};
+
+
+    \node [box, fill = blue!30, text width      = 2.45cm, below=0.0cm of perspective1label.south west, anchor=north west, xshift=0.2cm]
+    (perspective1_goals)
+    {\underline{\bfseries Input}\\
+      \goals{\bookA}{\hatA}{\ballA}   
+     };
+     
+         \node [box, fill = red!30, text width      = 2.45cm, below = 0.2cm of perspective1_goals]
+    (perspective1_choice)
+    {\underline{\bfseries Output}\\
+      \choiceA\\      
+     };
+
+    \node [box, right = 1cm of perspective1_goals.north east, anchor=north west, fill = yellow, text width      = 3.5cm]
+    (perspective1_dialog)
+    {\underline{\bfseries Dialogue}\\
+      \textbf{write:} \turnA\ \textbf{read:} \turnB\ 
+      \textbf{write:} \turnC\ \textbf{read:} \turnD
+    }; 
+    
+        \node [box, fill = blue!30, text width      = 2.45cm, below=0.0cm of perspective2label.south west, anchor=north west, xshift=0.2cm]
+    (perspective2_goals)
+    {\underline{\bfseries Input}\\
+      \goals{\bookB}{\hatB}{\ballB}   
+     };
+    
+        \node [box, right = 1cm of perspective2_goals.north east, anchor=north west, fill = yellow, text width      = 3.5cm]
+    (perspective2_dialog)
+    {\underline{\bfseries Dialogue}\\
+      \textbf{read:} \turnA\ 
+      \textbf{write:} \turnB\ 
+      \textbf{read:} \turnC\ 
+      \textbf{write:} \turnD
+    }; 
+    
+             \node [box, fill = red!30, text width      = 2.45cm, below = 0.2cm of perspective2_goals]
+    (perspective2_choice)
+    {\underline{\bfseries Output}\\
+      \choiceB\\      
+     };
+    
+    \draw [arrow] (perspective1_goals) -- (perspective1_dialog);
+    \draw [arrow] (perspective2_goals) -- (perspective2_dialog);
+
+    \draw [arrow] (perspective1_dialog) -- (perspective1_choice.east);
+    \draw [arrow] (perspective2_dialog) -- (perspective2_choice.east);
+\end{tikzpicture}
+\caption{\label{figure:representation} 谈判过程展示 }
+\end{figure*}

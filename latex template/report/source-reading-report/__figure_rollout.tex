@@ -1,0 +1,108 @@
+\begin{figure*}[ht!]
+\centering
+% Declare layers
+%\pgfdeclarelayer{background}
+%\pgfsetlayers{background,main}
+
+\begin{tikzpicture}[scale=.8,cap=round]
+\tikzstyle{them} = [rectangle, rounded corners, minimum width=2cm, text width=2.6cm, minimum height=1cm, draw=black, fill=red!30]
+\tikzstyle{candidate} = [rectangle, rounded corners, minimum width=2cm, text width=3cm, minimum height=0.3cm, draw=black, fill=blue!30]
+\tikzstyle{rollout} = [rectangle, rounded corners, minimum width=3.4cm, minimum height=0.3cm, text width=3.4cm, draw=black, fill=red!30]
+\tikzstyle{score} = [diamond, minimum width=0.5cm, minimum height=0.5cm, draw=black, fill=green!30, inner sep=0,outer sep=0]
+
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\node (start) [them] {\them You get one book and I'll take everything else.};
+\node (candidate2) [candidate, right of=start, xshift=2.6cm, yshift=0.75cm] {
+\you Great deal, thanks!};
+\node (candidate1) [candidate, right of=start, xshift=2.6cm, yshift=-0.75cm] {\you No way, I need all 3 hats};
+%\node (candidate3) [candidate, below of=candidate2, yshift=-1cm] {Start2};
+
+\node (rollout11) [rollout, right of=candidate1, xshift=3cm, yshift=-0.4cm] {\them Ok, fine};
+\node (rollout12) [rollout, right of=candidate1, xshift=3cm, yshift=0.4cm] {\them I'll give you 2};
+
+\node (rollout21) [rollout, right of=candidate2, xshift=3cm, yshift=-0.4cm] {\them No problem};
+\node (rollout22) [rollout, right of=candidate2, xshift=3cm, yshift=0.4cm] {\them Any time};
+
+
+\node (choose11) [candidate, right of=rollout11, xshift=3cm, text width=2.7cm] {\textbf{choose:} 3x \textit{hat}};
+\node (choose12) [candidate, right of=rollout12, xshift=3cm, text width=2.7cm] {\textbf{choose:} 2x \textit{hat}};
+
+\node (choose21) [candidate, right of=rollout21, xshift=3cm, text width=2.7cm] {\textbf{choose:} 1x \textit{book}};
+\node (choose22) [candidate, right of=rollout22, xshift=3cm, text width=2.7cm] {\textbf{choose:} 1x \textit{book}};
+
+
+\node (score11) [score, right of=choose11, xshift=1.5cm] {9};
+\node (score12) [score, right of=choose12, xshift=1.5cm] {6};
+
+\node (score21) [score, right of=choose21, xshift=1.5cm] {1};
+\node (score22) [score, right of=choose22, xshift=1.5cm] {1};
+
+
+
+\draw [arrow] (start) -- (candidate1);
+\draw [arrow] (start) -- (candidate2);
+
+
+\foreach \i in {1,2}
+{
+\draw [arrow] (candidate1) -- (rollout1\i);
+\draw [arrow] (candidate2) -- (rollout2\i);
+
+\foreach \j in {1,2}
+{
+\draw [arrow] (rollout\i\j) -- (choose\i\j);
+\draw [arrow] (choose\i\j) -- (score\i\j);
+}
+}
+
+\draw [
+    thick,
+    decoration={
+        brace,
+        mirror,
+        raise=1.85cm,amplitude=6pt
+    },
+    decorate
+] (start.west) -- (start.east) node [pos=0.5,anchor=north,yshift=-1.9cm] {Dialogue history}; 
+
+\draw [
+    thick,
+    decoration={
+        brace,
+        mirror,
+        raise=1.10cm,amplitude=6pt
+    },
+    decorate
+] (candidate1.west) -- (candidate1.east) node [pos=0.5,anchor=north,yshift=-1.15cm] {Candidate responses}; 
+
+\draw [
+    thick,
+    decoration={
+        brace,
+        mirror,
+        raise=1.5cm,amplitude=6pt
+    },
+    decorate
+] (rollout12.west) -- (choose12.east) node [pos=0.5,anchor=north,yshift=-1.55cm] {Simulation of rest of dialogue}; 
+
+\draw [
+    thick,
+    decoration={
+        brace,
+        mirror,
+        raise=1.5cm,amplitude=4pt
+    },
+    decorate
+] (score12.west) -- (score12.east) node [pos=0.5,anchor=north,yshift=-1.55cm] {Score}; 
+
+
+\end{tikzpicture}
+\caption{
+\label{figure:rollouts} 
+对话推演
+}\vspace{-2.5mm}
+\end{figure*}

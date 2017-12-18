@@ -1,0 +1,83 @@
+\section{实验}
+\label{section:experments}
+\zihao{-4}
+
+\subsection{Training Details}
+FAIR在实验中使用的科学计算工具为PyTorch。
+输入的项目数量和价值被嵌入至64维的线性空间，对话中的词则被嵌入至256维的线性空间\wordnote{
+    具体的词嵌入方法请参考小节\ref{subsection:grus_rnn}和\citet{  Cho-18,  Cho-28}。
+}。
+对应的$\text{GRU}_w$，$\text{GRU}_g$，$\text{GRU}_{\overrightarrow{o}}$和$\text{GRU}_{\overleftarrow{o}}$
+的隐藏层单元分别为64、128、256和256。
+
+在小节\ref{subsection:supervised_learning}Supervised Learning中，
+使用了随机梯度下降的方法搜索预测损失的最小值，其中最小批次采样单元为16个，以此避免落入局域陷阱，
+公式\ref{eq:supervised}中的$\alpha$为0.5。
+模型的初始学习速度为1.0，Nesterov动量为0.1，梯度速度为0.5。
+在此基础训练了30次后，然挑选效果最后的模型结果，并开始对学习速度进行退火处理。
+
+此外，训练与测试数据集中并没有包含人-人谈判失败的情况，且出现次数少于20次的词作废词处理。
+
+在节\ref{section:reinforcement}强化学习中，学习速度为0.1，梯度速度为1.0，公式\ref{eq:reinforcement}中的$\gamma$为0.95。
+在4次强化学习后，FAIR同样采用随机梯度下降进行优化，学习速度为0.5。
+
+\subsection{Comparison Systems}
+FAIR进行了以下模型谈判比较：
+LIKELIHOOD使用了节\ref{section:likelihood}中的supervised training和decoding；
+RL使用了节\ref{section:reinforcement}中的goal-based selfplay;
+ROLLOUTS使用了节\ref{section:likelihood}中的supervised training和节\ref{section:rollout}中的goal-based decoding;
+RL+ROLLOUTS使用了节\ref{section:rollout}中的rollout。
+
+\subsection{Evaluation}
+\input{__table_results.tex}
+\begin{table}
+    \parbox[b]{0.4\textwidth}{
+        \centering
+        \scalebox{0.80}{\begin{tabular}{|c|c|} 
+        \hline
+        Metric & Dataset \\ 
+        \hline
+        Number of Dialogues & 5808  \\
+        Average Turns per Dialogue  &  6.6 \\
+        Average Words per Turn      &  7.6 \\
+        \% Agreed           & 80.1 \\
+        Average Score (/10) &  6.0 \\
+        \% Pareto Optimal   & 76.9 \\
+        \hline
+        %Number of words occurring \textgreater10x &         
+        \end{tabular}}
+        \caption{\label{tab:data} 人-人谈判数据集信息}
+        }
+    \parbox[b]{0.6\textwidth}{
+        \centering
+        \scalebox{0.80}{\begin{tabular}{|c|c|c|c|} 
+        \hline
+        Model & Valid PPL & Test PPL & Test Avg. Rank \\
+        \hline
+        \likelihood & 5.62 & 5.47 & 521.8 \\
+        \reinforce &  6.03 & 5.86   &  517.6  \\
+        \rollouts  & - & -   & 844.1 \\
+        \rlrollouts & - & - & 859.8 \\
+        \hline
+        \end{tabular}}
+        \caption{\label{table:intrinsic} 词汇复杂度和平均谈判轮数排名}
+        }
+\end{table}
+
+表\ref{table:endtoend}展示了4种模型分别LIKELIHOOD模型及人类谈判的结果。
+评价指标有4种，分别为平均总体得分、平均成交得分、成交率和帕累托最优率。
+其中，若两位代理的最终选择出现分歧，即选择的各项目之和不等于初始各项目之和，则视为谈判失败，
+所以得分\quotes{Score}分为平均总体得分和平均成交得分；
+成交率为谈判成功的次数与总谈判次数的比值；
+帕累托最优率为两位代理的输出均已达到价值分数最高，
+其中任何一方均没有办法再进行提交的次数与谈判成功次数的比值。
+
+表\ref{tab:data}展示了人-人谈话数据集的结果。
+
+表\ref{table:intrinsic}展示了各模型与人类的差别，其中Valid PPL、Test PPL和Test Avg. Rank分别代表了
+LIKELIHOOD模型产生回答的有效复杂度、测试复杂度和平均谈判轮数，指标越低表示越接近人类。
+由表\ref{table:intrinsic}可知，LIKELIHOOD模型最接近人。
+值得注意的是，模型间的差异有可能是由于RL、ROLLOUTS和RL+ROLLOUTS更复杂化的谈判策略造成的。
+
+通过表\ref{table:endtoend}可知，ROLLOUTS和RL+ROLLOUTS，尤其是RL+ROLLOUTS与LIKELIHOOD模型相比具有明显优势。
+RL+ROLLOUTS模型帕累托最优率的提高展示了更好的选择方案，这种结果验证了强化学习与对话推演比单纯模仿人类在谈判上更具有优势。

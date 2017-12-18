@@ -1,0 +1,73 @@
+\def\layersep{1.0cm}
+%\newcommand{\counts}[2]{\textit{#2x}\textbf{#1}}
+\newcommand{\counts}[2]{\textbf{#1} \textit{count}=#2}
+\newcommand{\values}[2]{\textbf{#1} \textit{value}=#2}
+
+
+\def\goals{}%\counts{book}{3}, \values{book}{2}, \counts{hat}{2}, \values{hat}{1}, \counts{ball}{1}, \values{ball}{2}, \values{ball}{2}}
+
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+    \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
+    \tikzstyle{input neuron}=[neuron,draw=black!50, fill=white]
+    \tikzstyle{output neuron}=[neuron, fill=red!50]
+    \tikzstyle{hidden neuron}=[neuron, fill=blue!50]
+    \tikzstyle{annot} = [text width=4em, text centered]
+  \tikzstyle{box} = [rectangle, rounded corners, font=\sffamily\footnotesize, text width=2.3cm, draw=black]
+
+\newcommand{\network}[0]{
+\scalebox{0.7}{
+\begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+\tikzset{>=latex}
+
+  
+  
+      \node [box, draw=black, thick, fill = white%, minimum width = 2.7cm, minimum height = 1cm
+      ] at (2,0.2) (enc) {Input Encoder};
+
+      \node [box, draw=black, thick, fill = white%, minimum width = 2.7cm, minimum height = 1cm
+      , right = 1cm of enc]  (dec) {Output Decoder};
+
+   
+
+    \foreach[count=\y,evaluate=\y as \prevx using int(\y-2)] \name in \words {
+        \node[input neuron] (H-\y) at (\prevx, -2) {};
+        \node[anchor=base] (O-\y) at (\prevx, -3) {\name};
+    }
+
+    \foreach[count=\y,evaluate=\y as \prevx using int(\y-1)] \w in \written {
+        \ifthenelse{\y>1}{\path (O-\prevx) edge (H-\y);}{}
+        \ifthenelse{\y>1}{\path (H-\prevx) edge (H-\y);}{}
+        \ifthenelse{\y>0 \AND \w=1}{\path (H-\y) edge (O-\y);}{}
+        
+
+        \path (enc) edge (H-\y);
+        \path (H-\y) edge (dec);
+    }
+
+
+%[evaluate=\x as \evalx using int(\x+1)]
+\end{tikzpicture}
+}
+}
+
+
+
+\begin{figure*}[t!]
+    \def\words{\you,\vphantom{.}\space\space Take, one, hat, \them, I, need, two, \you, deal, \dots}
+
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \def\written{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        \centering
+        \network
+        \caption{\label{figure:model:supervised} Supervised Training}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \def\written{0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1}
+        \centering
+        \network
+        \caption{\label{figure:model:reinforcement} Decoding, and Reinforcement Learning}
+    \end{subfigure}
+    \caption{\label{figure:model} 端到端神经网络}
+\end{figure*}
