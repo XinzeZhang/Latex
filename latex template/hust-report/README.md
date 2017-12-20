@@ -1,6 +1,13 @@
 hustreport
 ==========
 
+## Attention 注意
+
+在texlive2017下使用该中文模板时，会出现bibtex的报错，提示找不到thuthesis.bst。
+
+原因在于，此中文模板的默认bibstyle文件为thuthesis.bst文件，而在texlive2017下，thuthesis的bibstyle为thuthesis-numeric.bst和thuthesis-author-year.bst，所以在bibtex编译时找不到thuthesis.bst文件。
+
+解决办法为：texlive2016的解压包中，找到thuthesis.bst文件（或见此目录），复制到/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis路径下，然后sudo texhash刷新索引。就可以了。
 
 >   中文版[点击这里](https://github.com/hust-latex/hustreport/blob/master/README.zh-cn.md)。
 
