@@ -1,0 +1,106 @@
+\begin{thebibliography}{10}
+
+\bibitem{xinze2017svm}
+张心泽, 蔡淑琴, 罗思宇.
+\newblock 基于支持向量机的在线负面口碑处理专家识别方法.
+\newblock 统计与决策, 2017, 22:79--83
+\thudot
+
+\bibitem{xinze2017accounting}
+张心泽.
+\newblock 账务智能处理中的会计机器代理研究.
+\newblock 华中科技大学, 2017.
+\thudot
+
+\bibitem{cybenko1992approximation}
+Cybenko G.
+\newblock Approximation by superpositions of a sigmoidal function.
+\newblock Mathematics of Control, Signals, and Systems (MCSS), 1992,
+  5(4):455--455
+\thudot
+
+\bibitem{chen1995universal}
+Chen T, Chen H.
+\newblock Universal approximation to nonlinear operators by neural networks
+  with arbitrary activation functions and its application to dynamical systems.
+\newblock IEEE Transactions on Neural Networks, 1995, 6(4):911--917
+\thudot
+
+\bibitem{silver2017mastering}
+Silver D, Schrittwieser J, Simonyan K, et~al.
+\newblock Mastering the game of go without human knowledge.
+\newblock Nature, 2017, 550(7676):354--359
+\thudot
+
+\bibitem{lewis2017deal}
+Lewis M, Yarats D, Dauphin Y~N, et~al.
+\newblock Deal or no deal? end-to-end learning for negotiation dialogues.
+\newblock arXiv preprint arXiv:1706.05125, 2017.
+\thudot
+
+\bibitem{he2016powerful}
+He K, Wang Y, Hopcroft J.
+\newblock A powerful generative model using random weights for the deep image
+  representation.
+\newblock  Advances in Neural Information Processing Systems, 2016.
+\newblock  631--639
+\thudot
+
+\bibitem{kwok1997objective}
+Kwok T~Y, Yeung D~Y.
+\newblock Objective functions for training new hidden units in constructive
+  neural networks.
+\newblock IEEE Transactions on neural networks, 1997, 8(5):1131--1148
+\thudot
+
+\bibitem{mahoney2011randomized}
+Mahoney M~W, et~al.
+\newblock Randomized algorithms for matrices and data.
+\newblock Foundations and Trends{\textregistered} in Machine Learning, 2011,
+  3(2):123--224
+\thudot
+
+\bibitem{scardapane2017randomness}
+Scardapane S, Wang D.
+\newblock Randomness in neural networks: an overview.
+\newblock Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery,
+  2017, 7(2)
+\thudot
+
+\bibitem{cui2016high}
+Cui C, Wang D.
+\newblock High dimensional data regression using lasso model and neural
+  networks with random weights.
+\newblock Information Sciences, 2016, 372:505--517
+\thudot
+
+\bibitem{pao1992functional}
+Pao Y~H, Takefuji Y.
+\newblock Functional-link net computing: theory, system architecture, and
+  functionalities.
+\newblock Computer, 1992, 25(5):76--79
+\thudot
+
+\bibitem{tyukin2009feasibility}
+Tyukin I~Y, Prokhorov D~V.
+\newblock Feasibility of random basis function approximators for modeling and
+  control.
+\newblock  Control Applications,(CCA) \& Intelligent Control,(ISIC), 2009 IEEE.
+  IEEE, 2009.
+\newblock  1391--1396
+\thudot
+
+\bibitem{gorban2016approximation}
+Gorban A~N, Tyukin I~Y, Prokhorov D~V, et~al.
+\newblock Approximation with random bases: Pro et contra.
+\newblock Information Sciences, 2016, 364:129--145
+\thudot
+
+\bibitem{li2017insights}
+Li M, Wang D.
+\newblock Insights into randomized algorithms for neural networks: Practical
+  issues and common pitfalls.
+\newblock Information Sciences, 2017, 382:170--178
+\thudot
+
+\end{thebibliography}
