@@ -233,7 +233,8 @@
 \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
 \RequirePackage{overpic}
-\RequirePackage{graphicx,caption,subcaption}
+\RequirePackage{graphicx}
+\RequirePackage{caption,subcaption}
 \RequirePackage{array}
 \RequirePackage{multirow,tabularx,ltxtable}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
@@ -660,7 +661,7 @@
     \TurnOffTabFontSetting
     \fontsize{16pt}{24.0pt}\selectfont
     \begin{tabular}{p{6em}@{\hspace{1em}}l}
-      {{学}\hfill{号}} & \makebox[10em][l]{\rule[-5.0pt]{10em}{1pt}\hspace{-10em}\hfill\HUST@stuno\hfill} \\[2ex]
+      {{报}\hfill{名}\hfill{号}} & \makebox[10em][l]{\rule[-5.0pt]{10em}{1pt}\hspace{-10em}\hfill\HUST@stuno\hfill} \\[2ex]
       {{姓}\hfill{名}} & \makebox[10em][l]{\rule[-5.0pt]{10em}{1pt}\hspace{-10em}\hfill\HUST@author\hfill} \\[2ex]
       {{方}\hfill{向}} & \makebox[10em][l]{\rule[-5.0pt]{10em}{1pt}\hspace{-10em}\hfill\HUST@major\hfill} \\[2ex]
       {{指}\hfill{导}\hfill{教}\hfill{师}} & \makebox[10em][l]{\rule[-5.0pt]{10em}{1pt}\hspace{-10em}\hfill\HUST@advisor\hfill} \\[2ex]
