@@ -1,0 +1,36 @@
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.iconTheme": "vscode-icons",
+    "latex-workshop.chktex.enabled": true,
+    "workbench.colorTheme": "Monokai Dimmed",
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        }
+    ],
+    "python.formatting.formatOnSave": true,
+    "python.pythonPath": "python",
+    "editor.renderIndentGuides": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderControlCharacters": false,
+    "files.trimTrailingWhitespace": false,
+    "editor.cursorBlinking": "smooth",
+    "editor.wrappingIndent": "indent",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#8F5E3E"
+    },
+    "editor.renderWhitespace": "boundary",
+    "git.enableSmartCommit": true,
+    "python.linting.pylamaArgs": [
+        "--extension-pkg-whitelist=jieba"
+    ],
+    "latex-workshop.latex.clean.enabled": true,
+    "latex-workshop.latex.autoBuild.onTexChange.enabled": true
+}

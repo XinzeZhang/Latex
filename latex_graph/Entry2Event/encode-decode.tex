@@ -1,0 +1,135 @@
+\documentclass{article}
+    
+    \usepackage{tikz}
+    \usetikzlibrary{shapes,arrows,shadows}
+    \usepackage{amsmath,bm,times}
+    \usepackage[a4paper]{geometry}
+
+    
+    \begin{document}
+    % Define the layers to draw the diagram
+    \pgfdeclarelayer{background}
+    \pgfdeclarelayer{foreground}
+    \pgfsetlayers{background,main,foreground}
+    
+    % Define block styles used later
+    
+    \tikzstyle{netnode}=[draw, text width=1em, text centered, minimum height=1.5em]
+    \tikzstyle{nodetext} = [minimum width=1em, minimum height=1em, text centered]
+    \tikzstyle{netcircle} = [draw, text width=1em, minimum height=1em,circle]
+    \tikzstyle{edge_post} =[draw, ->, >=stealth, shorten >= 1pt, semithick]
+    \tikzstyle{edge_post_dotted} =[draw, ->, >=stealth, shorten >= 1pt, semithick,dotted]
+    \tikzstyle{edge_pre} =[draw, <-, >=stealth, shorten >= 1pt, semithick]
+    
+    % Define distances for bordering
+    \def\blockdist{1.25}
+    \def\edgedist{1.5}
+    \def\encodedist{(-1.5,0)}
+    \def\putdist{(0,-1.5)}
+    \def\decodedist{(1.5,0)}
+    
+    % \centering
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}
+            % \draw[help lines] (-5,0)grid (10,4);
+            % Encoder Hidden Units
+            \node (encoder_unit_xt) [netcircle] {};
+            % \node (encoder_unit_xt) [netcircle] at(-10,0) {};
+            \path (encoder_unit_xt)+\encodedist{} node (encoder_unit_dots) [nodetext] {$\dots$};
+            \path (encoder_unit_dots)+\encodedist{} node (encoder_unit_x2) [netcircle] {};
+            \path (encoder_unit_x2) + \encodedist{} node (encoder_unit_x1) [netcircle] {};
+            
+            % Encoder Input Units
+            \path (encoder_unit_x1) + \putdist{} node (input_x1) [nodetext] {$X_1$};
+            \path (encoder_unit_x2) + \putdist{} node (input_x2) [nodetext] {$X_2$};
+            \path (encoder_unit_dots) + \putdist{} node (input_dots) [nodetext] {$\dots$};
+            \path (encoder_unit_xt) + \putdist{} node (input_xt) [nodetext] {$X_T$};
+    
+            % Encoder Edges
+            \path (input_x1) [edge_post] -- (encoder_unit_x1);
+            \path (input_x2) [edge_post] -- (encoder_unit_x2);
+            \path (input_dots) [edge_post] -- (encoder_unit_dots);
+            \path (input_xt) [edge_post] -- (encoder_unit_xt);
+            \path (encoder_unit_x1) [edge_post] -- (encoder_unit_x2);
+            \path (encoder_unit_x2) [edge_post] -- (encoder_unit_dots);
+            \path (encoder_unit_dots) [edge_post] -- (encoder_unit_xt);
+    
+            % Encoder Name
+            \path (encoder_unit_x1) + (-0.5,0.75) node (encoder) [nodetext] {Encoder};
+    
+            % Encoder background
+            \begin{pgfonlayer}{background}
+                \path (encoder.west |- encoder.north) + (-0.5,0.3) node (encodernorthwest) {};
+                \path (input_xt.south east) + (0.5,-0.3) node (encodersoutheast) {};
+                \path[rounded corners, draw] (encodernorthwest) rectangle (encodersoutheast) {};
+            \end{pgfonlayer}
+    
+            % Summary C
+            \path (encoder_unit_xt) + (1.5,1) node[netcircle] (Summary) {}
+            edge[edge_pre] (encoder_unit_xt);
+            \node[below] at (Summary.south) {$C$};
+    
+            % Decoder Hidden Units
+            \path (Summary)+(1.5,-1) node [netcircle] (decoder_unit_x1) {};
+            \path (decoder_unit_x1) + \decodedist{} node (decoder_unit_x2) [netcircle] {};
+            \path (decoder_unit_x2) + \decodedist{} node (decoder_unit_dots) [nodetext] {$\dots$};
+            \path (decoder_unit_dots) + \decodedist{} node (decoder_unit_xt) [netcircle] {};
+    
+            % Decoder Outputs
+            \path (decoder_unit_x1) + \putdist{} node (output_x1) [nodetext] {$Y_1$};
+            \path (decoder_unit_x2) + \putdist{} node (output_x2) [nodetext] {$Y_2$};
+            \path (decoder_unit_dots) + \putdist{} node (output_dots) [nodetext] {$\dots$};
+            \path (decoder_unit_xt) + \putdist{} node (output_xt) [nodetext] {$Y_{T^\prime{}}$};
+
+            % Decoder backgroud
+            \path (decoder_unit_xt) + (0.5,0.75) node (decoder) [nodetext] {Decoder};
+            \begin{pgfonlayer}{background}
+                \path (decoder.north east) + (0.5,0.3) node (decodernortheast) {};
+                \path (output_x1.south west) + (-0.5,-0.3) node (decodersouthwest) {};
+                \path[rounded corners, draw] (decodernortheast) rectangle (decodersouthwest) {};
+            \end{pgfonlayer}
+    
+            % Summary Edges
+            \path (Summary) [edge_post_dotted] -- (decoder_unit_x1);
+            \path (Summary) [edge_post_dotted] -- (decoder_unit_x2);
+            \path (Summary) [edge_post_dotted] -- (decoder_unit_dots);
+            \path (Summary) [edge_post_dotted] -- (decoder_unit_xt);
+            \path (Summary) [edge_post_dotted] -- (output_x1);
+            \path (Summary) [edge_post_dotted] -- (output_x2);
+            \path (Summary) [edge_post_dotted] -- (output_dots);
+            \path (Summary) [edge_post_dotted] -- (output_xt);
+    
+            % Decoder Edges
+            \path (decoder_unit_x1){
+                edge [edge_post] (decoder_unit_x2)
+                edge [edge_post] (output_x1)
+            };
+            \path (decoder_unit_x2){
+                edge [edge_post] (decoder_unit_dots)
+                edge [edge_post] (output_x2)
+            };
+            \path (decoder_unit_dots){
+                edge [edge_post] (decoder_unit_xt)
+                edge [edge_post] (output_dots)
+            };
+            \path (decoder_unit_xt){
+                edge [edge_post] (output_xt)
+            };
+            \path (output_x1){
+                edge [edge_post] (output_x2)
+                edge [edge_post] (decoder_unit_x2)
+            };
+            \path (output_x2){
+                edge [edge_post] (output_dots)
+                edge [edge_post] (decoder_unit_dots)
+            };
+            \path (output_dots){
+                edge [edge_post] (output_xt)
+                edge [edge_post] (decoder_unit_xt)
+            };
+
+        \end{tikzpicture}
+    \end{figure}
+    
+    \end{document}
