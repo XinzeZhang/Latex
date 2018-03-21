@@ -90,7 +90,7 @@
   pdfkeywords={}
 }
 \RequirePackage{xeCJK}
-\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+% \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -220,7 +220,7 @@
 \newcommand*{\honortitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\itshape\color{graytext} #1}}
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{awesome} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{darktext} #1}}
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
@@ -434,7 +434,7 @@
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
-    \vspace{1.0mm}
+    \vspace{2.0mm}
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
