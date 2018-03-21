@@ -1,5 +1,6 @@
 % Name           : beamerthemeelegance.sty
-% Copyright      : Ivan Cukic (ivan at cukic.co) 2016
+% Copyright      : Xinze Zhang (xinze@hust.edu.cn) 2018
+%                  Ivan Cukic (ivan at cukic.co) 2016
 %                  Benjamin Weiss (benjamin.weiss@student.hs-rm.de) 2013
 % Version        : 0.1
 % License        : This file may be distributed and/or modified under the
@@ -136,33 +137,43 @@
     % Add background to title page
     \begin{minipage}[b][\paperheight]{\textwidth}
         \vspace*{5mm}
-        \includegraphics[height=10mm]{./style/images/logo.png}\par
+        \includegraphics[height=10mm]{./style/images/hust.png}\par
         \vspace*{5mm}
-        \ifx\insertsubtitle\@empty%
+        \ifx\inserttitle\@empty%
         \else%
             % {\usebeamerfont{title}\usebeamercolor[fg]{title}\MakeUppercase{\inserttitle}\par}%
             {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
         \fi%
         \ifx\insertsubtitle\@empty%
         \else%
+            \begin{flushright}
             {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-            \vspace*{5mm}
+            \end{flushright}
+            \vspace*{2.5mm}
         \fi%
         \ifx\insertdate\@empty%
         \else%
+            \begin{flushright}
             {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+            \end{flushright}
         \fi%
 
-        \vspace*{2cm}
+        \vspace*{0.75cm}
 
         \ifx\insertauthor\@empty%
         \else%
+            \begin{flushright}
             {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+            \end{flushright}
+            \vspace*{10mm}
         \fi%
         \ifx\insertinstitut\@empty%
         \else%
-            \vspace*{5mm}
-            {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+            % \vspace*{5mm}
+        %     \begin{flushright}
+        %     {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+        %     \end{flushright}
+        {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
         \fi%
         \vspace*{3mm}
     \end{minipage}
