@@ -11,6 +11,8 @@
 
 \usepackage{eso-pic}
 \usepackage{etoolbox}
+
+\usepackage{xcolor}
 % \setbeamercovered{transparent=60}
 
 \newif\if@doSans
@@ -31,15 +33,15 @@
 %---------------------------------------------------------------------
 \useoutertheme[subsection=false,shadow]{miniframes}
 \setbeamertemplate{section in toc}[sections unnumbered]
-\setbeamertemplate{subsection in toc}[subsections unnumbered]
+% \setbeamertemplate{subsection in toc}[subsections unnumbered]
 \setbeamertemplate{subsection in toc}{\vspace{.2cm}\inserttocsubsection\\}
 
 %---------------------------------------------------------------------
 % Itemize
 %---------------------------------------------------------------------
-\setbeamertemplate{itemize item}[square]
-\setbeamertemplate{itemize subitem}[square]
-\setbeamertemplate{itemize subsubitem}[square]
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[circle]
 
 \setlength{\parskip}{0.5em}
 
@@ -226,7 +228,7 @@
 %---------------------------------------------------------------------
 \setbeamertemplate{frametitle}
 {
-    \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=3ex,dp=1.5ex]{}
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=2.5ex,dp=1.5ex]{}
         % If you remove section titles, you can play with this
 
         % for the title to be vertically aligned
@@ -348,5 +350,80 @@
 \newcommand{\kai}[1]{{\jfontspec{AdobeKaitiStd-Regular} #1}}
 \newcommand{\fangsong}[1]{{\jfontspec{AdobeFangsongStd-Regular} #1}}
 
+%-------------------------------------------------------------------------------
+%                Configuration for colors
+%-------------------------------------------------------------------------------
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\definecolor{graytext}{HTML}{5D5D5D}
+\colorlet{lighttext}{lightgray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+\colorlet{awesome}{awesome-red}
+% For elements of entry
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\KAI\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{12pt}{1em}\KAI\color{darktext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{12pt}{1em}\KAI\color{darktext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{12pt}{1em}\KAI\color{awesome} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\KAI\color{text} #1}}
+
+% For elements of subentry
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{12pt}{1em}\KAI\slshape\color{darktext} #1}}
+% \newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\KAI\bdseries\color{graytext} #1}}
+\newcommand*{\subentrypositionstyle}[1]{{\fontsize{12pt}{1em}\KAI\scshape\color{graytext} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{12pt}{1em}\itshape\color{graytext} #1}}
+\newcommand*{\subentrylocationstyle}[1]{{\fontsize{12pt}{1em}\KAI\upshape\color{awesome} #1}}
+\newcommand*{\subdescriptionstyle}[1]{{\fontsize{10pt}{1em}\KAI\itshape\color{text} #1}}
+
+% Define an entry of cv Education
+% Usage: \cveducation{<title>}{<location>}
+\newcommand*{\cveducation}[2]{%
+  \vspace{-2.0mm}
+%   \setlength\tabcolsep{0pt}
+%   \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \entrytitlestyle{#1} & \entrylocationstyle{#2} \\
+  \end{tabular*}%
+}
+
+\newcommand*{\cvsubeducation}[2]{%
+  \vspace{-2.0mm}
+%   \setlength\tabcolsep{0pt}
+%   \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \subentrytitlestyle{#1} & \subentrydatestyle{#2} \\
+  \end{tabular*}%
+}
+
+% Define an entry of cv experience
+% Usage: \cvexperience{<title>}{<date>}{<description>}
+\newcommand*{\cvexperience}[2]{%
+  \vspace{-2.0mm}
+%   \setlength\tabcolsep{0pt}
+%   \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \entrytitlestyle{#1} & \subentrydatestyle{#2} \\
+  \end{tabular*}%
+}
 \mode
 <all>

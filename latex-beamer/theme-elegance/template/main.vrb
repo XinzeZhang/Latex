@@ -2,18 +2,18 @@
 
     \begin{cxxcode}
         class example {
-            // There are a few useful escapes here
-            @ \codedots @ // \codedots shows grayed-out dots
+                // There are a few useful escapes here
+                @ \codedots @ // \codedots shows grayed-out dots
 
-            // Invalid parts can be marked with \hlErr
-            @\hlErr{operator;}@
+                // Invalid parts can be marked with \hlErr
+                @\hlErr{operator;}@
 
-            // Good parts can be marked with \hlOk
-            @\hlOk{operator() ()}@
+                // Good parts can be marked with \hlOk
+                @\hlOk{operator() ()}@
 
-            // Other highlighting commands can be seen in
-            // the preamble.tex file
-        };
+                // Other highlighting commands can be seen in
+                // the preamble.tex file
+            };
     \end{cxxcode}
 
 \beamerclosesubstitutedenvironement {xframe}
