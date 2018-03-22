@@ -25,27 +25,43 @@
 \headcommand {\beamer@subsectionentry {0}{1}{4}{8}{工程经历}}
 \headcommand {\slideentry {1}{4}{1}{8/8}{工程经历}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {1}{4}{2}{9/9}{工程经历}{0}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{1}{5}{9}{获奖 \& 荣誉}}
+\headcommand {\slideentry {1}{5}{1}{9/9}{获奖 \& 荣誉}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {1}{4}{3}{10/10}{工程经历}{0}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{1}{6}{10}{论文 \& 技能}}
+\headcommand {\slideentry {1}{6}{1}{10/10}{论文 \& 技能}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {1}{4}{4}{11/11}{工程经历}{0}}
+\headcommand {\slideentry {1}{6}{2}{11/11}{论文 \& 技能}{0}}
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\beamer@sectionpages {2}{11}}
-\headcommand {\beamer@subsectionpages {8}{11}}
-\headcommand {\sectionentry {2}{Examples}{12}{Examples}{0}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\sectionentry {2}{研究课题论证}{12}{研究课题论证}{0}}
 \headcommand {\slideentry {2}{0}{1}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{13}{Showing code}}
-\headcommand {\slideentry {2}{1}{1}{13/13}{Showing code}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{13}{深度学习模型与大数据}}
+\headcommand {\slideentry {2}{1}{1}{13/13}{深度学习模型与大数据}{0}}
 \headcommand {\beamer@framepages {13}{13}}
 \headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{Code slides and escapes}}
-\headcommand {\slideentry {2}{2}{1}{14/14}{Code slides and escapes}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{时间序列数据}}
+\headcommand {\slideentry {2}{2}{1}{14/14}{时间序列数据}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@partpages {1}{14}}
 \headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\beamer@sectionpages {12}{14}}
-\headcommand {\beamer@documentpages {14}}
-\headcommand {\def \inserttotalframenumber {14}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{15}{RNN}}
+\headcommand {\slideentry {2}{3}{1}{15/15}{RNN}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {2}{3}{2}{16/16}{RNN}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{3}{3}{17/17}{RNN}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{3}{4}{18/18}{RNN}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{3}{5}{19/19}{RNN}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {15}{19}}
+\headcommand {\beamer@sectionpages {12}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\def \inserttotalframenumber {19}}

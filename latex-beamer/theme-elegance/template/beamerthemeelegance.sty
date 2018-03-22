@@ -13,6 +13,8 @@
 \usepackage{etoolbox}
 
 \usepackage{xcolor}
+
+
 % \setbeamercovered{transparent=60}
 
 \newif\if@doSans
@@ -395,6 +397,16 @@
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{12pt}{1em}\KAI\upshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{10pt}{1em}\KAI\itshape\color{text} #1}}
 
+% For elements of honor
+\newcommand*{\honortitlestyle}[1]{{\fontsize{10pt}{1em}\KAI\itshape\color{graytext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\HEI\bfseries\color{darktext} #1}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\KAI\color{graytext} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\KAI\upshape\color{darktext} #1}}
+
+% For elements of skill
+\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\color{text} #1}}
+
 % Define an entry of cv Education
 % Usage: \cveducation{<title>}{<location>}
 \newcommand*{\cveducation}[2]{%
@@ -425,5 +437,56 @@
     \entrytitlestyle{#1} & \subentrydatestyle{#2} \\
   \end{tabular*}%
 }
+
+
+% Define an environment for cvhonor
+\newenvironment{cvhonors}{%
+  \begin{center}
+    % \setlength\tabcolsep{0pt}
+    % \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{cl@{\extracolsep{\fill}}r}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
+
+% Define a line of cv information(honor, award or something else)
+% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
+\newcommand*{\cvhonor}[4]{%
+  \vspace{1.0mm}
+  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+% Define an environment for cvskill
+\newenvironment{cvskills}{%
+  \begin{center}
+    % \setlength\tabcolsep{1ex}
+    % \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}rl}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+% Define a line of cv information(skill)
+% Usage: \cvskill{<type>}{<skillset>}
+\newcommand*{\cvskill}[2]{%
+	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+}
+
+% Define an environment for cventry
+\newenvironment{cventries}{%
+  \begin{center}
+}{%
+  \end{center}
+}
+
+\newcommand*{\cvpapers}[1]{%
+  \vspace{-3.0mm}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#1}}
+  \end{tabular*}%
+}
+
 \mode
 <all>

@@ -1,19 +1,5 @@
-\frametitle{Second slide}
+\frametitle{训练示例}
 
-    \begin{cxxcode}
-        class example {
-                // There are a few useful escapes here
-                @ \codedots @ // \codedots shows grayed-out dots
-
-                // Invalid parts can be marked with \hlErr
-                @\hlErr{operator;}@
-
-                // Good parts can be marked with \hlOk
-                @\hlOk{operator() ()}@
-
-                // Other highlighting commands can be seen in
-                // the preamble.tex file
-            };
-    \end{cxxcode}
+\movie[width=\textwidth]{train.mp4}
 
 \beamerclosesubstitutedenvironement {xframe}
