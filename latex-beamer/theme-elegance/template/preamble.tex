@@ -15,6 +15,8 @@
 \usepackage{ulem}
 \usepackage{textcomp}
 \usepackage{tikz}
+\usetikzlibrary{shapes,arrows,shadows}
+\usepackage{amsmath,bm,times}
 
 \usepackage{listings}
 
@@ -23,8 +25,14 @@
 
 \usepackage{DejaVuSansMono}
 
-\usepackage{multicol}  
+\usepackage{multicol}
+
 \usepackage{media9}
+
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{tabularx}
 
 % Adjust the colours to fit your design
 \definecolor{mainthemecolour}{rgb}{0.42,0.48,0.37}
@@ -56,38 +64,38 @@
 \usetheme{elegance}
 
 \lstnewenvironment{cxxcode}
-    {\lstset
-        { escapeinside={@}{@}
+{\lstset
+    { escapeinside={@}{@}
         , gobble=8
         , showstringspaces=false
         , basicstyle=\color{fglisting}
         , rulecolor=\color{mainthemecolourlight}
-        }
     }
-    {}
+}
+{}
 
 \lstnewenvironment{cxxcodebox}
-    {\lstset
-        { escapeinside={@}{@}
+{\lstset
+    { escapeinside={@}{@}
         , gobble=6
         , showstringspaces=false
         , basicstyle=\color{fglisting}
         , frame=lr
         , rulecolor=\color{mainthemecolourlight}
-        }
     }
-    {}
+}
+{}
 
 \lstnewenvironment{shellcode}
-    {\lstset
-        { escapeinside={@}{@}
+{\lstset
+    { escapeinside={@}{@}
         , gobble=7
         , showstringspaces=false
         , basicstyle=\color{fgshell}
         , backgroundcolor=\color{bgshell}
-        }
     }
-    {}
+}
+{}
 
 
 % Marking points to use in Tikz
@@ -96,6 +104,27 @@
 
 % Fragile frames
 \newenvironment{xframe}[1][]
-  {\begin{frame}[fragile,environment=xframe,#1]}
-  {\end{frame}}
+{\begin{frame}[fragile,environment=xframe,#1]}
+        {\end{frame}}
 
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define block styles used later
+
+\tikzstyle{netnode}=[draw, text width=1em, text centered, minimum height=1.5em]
+\tikzstyle{nodetext} = [minimum width=1em, minimum height=1em, text centered]
+\tikzstyle{netcircle} = [draw, text width=1em, minimum height=1em,circle]
+\tikzstyle{edge_post} =[draw, ->, >=stealth, shorten >= 1pt, semithick]
+\tikzstyle{edge_post_dotted} =[draw, ->, >=stealth, shorten >= 1pt, semithick,dotted]
+\tikzstyle{edge_pre} =[draw, <-, >=stealth, shorten >= 1pt, semithick]
+
+% Define distances for bordering
+\def\blockdist{1.25}
+\def\edgedist{1.5}
+\def\encodedist{(-1.5,0)}
+\def\putdist{(0,-1.5)}
+\def\decodedist{(1.5,0)}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}

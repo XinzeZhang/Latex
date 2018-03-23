@@ -1,16 +1,20 @@
-\frametitle{训练示例}
+\frametitle{Train Example}
 
     \includemedia[
-        label=some_dice,
+        % label=train,
         width=1.0\linewidth,
-        height=0.675\linewidth, % 16:9
+        height=0.275\linewidth, % 16:9
         addresource=train.mp4,
         transparent,
-        activate=pageopen,
-        passcontext,
+        activate=pagevisible,
+        % deactivate=pageinvisible,
+        % passcontext,
         flashvars={
-          source=train.mp4
-         &autoPlay=true % start playing on activation
+        source=train.mp4
+        &scaleMode=stretch
+        &autoPlay=true % start playing on activation
+        &loop=true
+        &hideBar=true
         }
       ]{}{VPlayer.swf}
 

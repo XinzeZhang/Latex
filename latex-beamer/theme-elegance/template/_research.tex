@@ -2,7 +2,7 @@
 
 \subsection{深度学习模型与大数据}
 
-\begin{xframe}{深度学习模型与大数据}
+\begin{xframe}{Big Data \& Deep Learning}
 
     \begin{columns}
         \column{0.5\textwidth}<1->
@@ -28,7 +28,7 @@
 
 \subsection{时间序列数据}
 
-\begin{xframe}{时间序列数据}
+\begin{xframe}{Time Series Data}
 
     \begin{itemize}
         \item {\descriptionstyle{大数据的背景}：\\
@@ -43,7 +43,7 @@
 
 \subsection{RNN}
 
-\begin{xframe}{循环神经网络}
+\begin{xframe}{Recurrent NN}
 
     \begin{columns}
         \column{0.5\textwidth}<1->
@@ -70,7 +70,7 @@
     \end{columns}
 \end{xframe}
 
-\begin{xframe}{循环神经网络}
+\begin{xframe}{Recurrent NN}
 
     \begin{itemize}
         \item {\descriptionstyle{RNN的展开}}
@@ -80,7 +80,7 @@
 
 \end{xframe}
 
-\begin{xframe}{循环神经网络}
+\begin{xframe}{Recurrent NN}
 
     \begin{itemize}
         \item {\descriptionstyle{RNN的应用问题}：\\
@@ -137,19 +137,23 @@
 
 \end{xframe}
 
-\begin{xframe}{训练示例}
-
+\begin{xframe}{Train Example}
+    
     \includemedia[
-        label=some_dice,
+        % label=train,
         width=1.0\linewidth,
-        height=0.675\linewidth, % 16:9
+        height=0.275\linewidth, % 16:9
         addresource=train.mp4, 
         transparent,
-        activate=pageopen,
-        passcontext,
+        activate=pagevisible,
+        % deactivate=pageinvisible,
+        % passcontext,
         flashvars={
-          source=train.mp4
-         &autoPlay=true % start playing on activation
+        source=train.mp4
+        &scaleMode=stretch
+        &autoPlay=true % start playing on activation
+        &loop=true
+        &hideBar=true
         }
       ]{}{VPlayer.swf}
 
