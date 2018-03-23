@@ -139,6 +139,19 @@
 
 \begin{xframe}{训练示例}
 
-\movie[width=\textwidth]{train.mp4}
+    \includemedia[
+        label=some_dice,
+        width=1.0\linewidth,
+        height=0.675\linewidth, % 16:9
+        addresource=train.mp4, 
+        transparent,
+        activate=pageopen,
+        passcontext,
+        flashvars={
+          source=trian.mp4
+         &autoPlay=true % start playing on activation
+         &loop=true
+        }
+      ]{}{VPlayer.swf}
 
 \end{xframe}
