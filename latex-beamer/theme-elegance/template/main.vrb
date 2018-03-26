@@ -1,21 +1,14 @@
-\frametitle{Train Example}
+\frametitle{Pursuance}
 
-    \includemedia[
-        % label=train,
-        width=1.0\linewidth,
-        height=0.275\linewidth, % 16:9
-        addresource=train.mp4,
-        transparent,
-        activate=pagevisible,
-        % deactivate=pageinvisible,
-        % passcontext,
-        flashvars={
-        source=train.mp4
-        &scaleMode=stretch
-        &autoPlay=true % start playing on activation
-        &loop=true
-        &hideBar=true
-        }
-      ]{}{VPlayer.swf}
+    \KAI{\large{仍有一系列的问题有待解决与研究：}}
+
+    \vspace{-2.0mm}
+
+    \begin{itemize}
+        \item {\descriptionstyle{RNN的逼近与优化}}
+        \item {\descriptionstyle{时间序列数据中的峰值处理与预测}}
+        \item {\descriptionstyle{考虑间隔值的时间序列数据处理与预测}}
+        \item {\descriptionstyle{考虑外生变量的时间序列数据处理与预测}}
+    \end{itemize}
 
 \beamerclosesubstitutedenvironement {xframe}
