@@ -63,3 +63,11 @@ tex --version
 # 指定图形界面语言为中文
 tlmgr -gui -gui-lang zh_CN
 ```
+
+## 注意
+
+在texlive2017下使用华科模版即hustreport或hustthesis会出现编译报错!
+
+原因在于hustreport/hustthesis默认使用thuthesis.bst，而在texlive2017下，/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis下的bst文件为thuthesis-numeric.bst和thuthesis-author-year.bst，在bibtex编译时找不到thuthesis.bst文件，导致latex-toolchain/latex-recipes停止报错。
+
+解决办法为在texlive2016的解压包中，找到thuthesis.bst文件，或找到本仓库的./latex-template/hust-thesis文件夹内已下载的thuthesis.bst文件，复制到/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis路径下，然后sudo texhash刷新索引，即可解决因缺失thuthesis.bst带来的编译报错问题。
