@@ -1,22 +1,7 @@
 {
     "files.autoSave": "onFocusChange",
-    "workbench.iconTheme": "vscode-icons",
-    "latex-workshop.chktex.enabled": true,
-    "workbench.colorTheme": "Monokai Dimmed",
-    "latex-workshop.latex.toolchain": [
-        {
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "%DOC%"
-            ]
-        }
-    ],
-    "python.formatting.formatOnSave": true,
-    "python.pythonPath": "python",
+    "workbench.iconTheme": "vscode-great-icons",
+    // editor
     "editor.renderIndentGuides": true,
     "editor.renderLineHighlight": "all",
     "editor.renderControlCharacters": false,
@@ -31,6 +16,106 @@
     "python.linting.pylamaArgs": [
         "--extension-pkg-whitelist=jieba"
     ],
+    // latex
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.latex.autoBuild.onTexChange.enabled": true,
     "latex-workshop.latex.clean.enabled": true,
-    "latex-workshop.latex.autoBuild.onTexChange.enabled": true
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex"
+            ]
+        },
+        {
+            "name": "lualatex -> bibtex -> lualatex*2",
+            "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
+                "lualatex"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk -> bibtex -> latexmk*2",
+            "tools": [
+                "latexmk",
+                "bibtex",
+                "latexmk",
+                "latexmk"
+            ]
+        }
+    ],
 }
