@@ -3,16 +3,31 @@ hustreport
 
 ## Attention 注意
 
-在texlive2017下使用该中文模板时，会出现bibtex的报错，提示找不到thuthesis.bst。
+在texlive2017/2018下使用该中文模板时，会出现bibtex的报错，提示找不到thuthesis.bst。
 
 原因在于，此中文模板的默认bibstyle文件为thuthesis.bst文件，而在texlive2017下，thuthesis的bibstyle为thuthesis-numeric.bst和thuthesis-author-year.bst，所以在bibtex编译时找不到thuthesis.bst文件。
 
 解决办法为：texlive2016的解压包中，找到thuthesis.bst文件（或见此目录），复制到/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis路径下，然后sudo texhash刷新索引。就可以了。
 
->   中文版[点击这里](https://github.com/hust-latex/hustreport/blob/master/README.zh-cn.md)。
+使用前需安装字体，并刷新字体缓存。否则lualatex或xelatex会寻找字体，耗费更长的时间编译tex。具体方法如下。
+* 安装字体（见此目录，注：字体未获Adobe授权，请勿商业使用）:
+    * `AdobeSongStd-Light`
+    * `AdobeKaitiStd-Regular`
+    * `AdobeHeitiStd-Regular`
+    * `AdobeFangsongStd-Regular`
+
+* 刷新字体缓存(Ubuntu):
+```
+$ fc-cache -fv
+```
+* 刷新字体缓存(Mac):
+```
+$ brew install fontconfig
+$ fc-cache -fv
+```
 
 An Unofficial Graduate Report Template in LaTeX for [Huazhong University of Science and Technology](http://www.hust.edu.cn). See other templates in <http://hust-latex.github.io>.
-
+>   中文版[点击这里](https://github.com/hust-latex/hustreport/blob/master/README.zh-cn.md)。
 ## Requirement
 
 * Install the latest version of [TeXLive](http://www.tug.org/texlive/)(Recommend) or [MiKTeX](http://miktex.org/). Please ensure that all the packages are up-to-date.
@@ -22,6 +37,15 @@ An Unofficial Graduate Report Template in LaTeX for [Huazhong University of Scie
     * `AdobeHeitiStd-Regular`
     * `AdobeFangsongStd-Regular`
 
+* Refresh the cache of fonts(Ubuntu):
+```
+$ fc-cache -fv
+```
+* Refresh the cache of fonts(Mac):
+```
+$ brew install fontconfig
+$ fc-cache -fv
+```
 ## Installation
 
 ### Install into local
