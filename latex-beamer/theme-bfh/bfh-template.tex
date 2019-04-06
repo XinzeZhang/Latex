@@ -1,0 +1,96 @@
+\documentclass{beamer}
+
+% INPUT ENCODING, FONT ENCODING, LANGUAGE
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+% \usepackage[frenchb]{babel}
+% \usepackage[ngerman]{babel}
+
+% DOCUMENT INFORMATIONS: TITLE, AUTHOR, DATE, INSTITUTE
+\title{Title of the presentation}
+\subtitle{Subtitle of the presentation}
+\author[Eugene]{Eugene Kudryavtsev}
+\date{\today}
+\institute[BFH]{Berner Fachhochschule}
+\titlegraphic{\includegraphics[scale=0.1]{hust-logo.png}} % logo on titlepage only
+
+% PACKAGES
+\usetheme{BFH} % use BFH theme
+\usepackage{color}
+\usepackage{listings}
+\usepackage{hyperref} % links
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[noframenumbering]{Overview}
+  \tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}[noframenumbering]{Overview}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+\section{Frist Section}
+
+\begin{frame}{\insertsection}
+  \begin{itemize}
+    \item First Item
+    \item Second Item
+    \item Third Item
+  \end{itemize}
+\end{frame}
+
+\subsection{Subsection}
+
+\begin{frame}{\insertsection}{\insertsubsection}
+  \begin{itemize}
+    \item Fourth Item
+    \item Fifth Item
+    \item Sixth Item
+  \end{itemize}
+\end{frame}
+
+
+\section{Second Section}
+
+\begin{frame}{\insertsection}
+  \begin{itemize}
+    \item First Item
+    \item Second Item
+    \item Third Item
+  \end{itemize}
+\end{frame}
+
+\section*{References}
+\begin{frame}{References}
+	\begin{thebibliography}{10}
+    \beamertemplateonlinebibitems
+    \bibitem{http://www.zinktypografie.nl/latex.php?lang=en}
+    Zink Typography Agency
+    \newblock {\small{What is \rmfamily\LaTeX}?}
+		\newblock http://www.zinktypografie.nl
+
+    \beamertemplateonlinebibitems
+    \bibitem{http://liantze.penguinattack.org/training_consultancy.html}
+    Lim Lian Tze's blog
+    \newblock {{\rmfamily\LaTeX}: Beautiful Typesetting}
+		\newblock http://liantze.penguinattack.org/latextypesetting.html
+
+    \beamertemplateonlinebibitems
+    \bibitem{https://www.sharelatex.com/learn/}
+    Share{\rmfamily\LaTeX{}} Online Ressource
+    \newblock {Guides \& References}
+		\newblock https://www.sharelatex.com
+    \end{thebibliography}
+\end{frame}
+
+\end{document}

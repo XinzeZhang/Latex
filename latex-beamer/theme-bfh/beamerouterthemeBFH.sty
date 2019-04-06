@@ -1,0 +1,50 @@
+\mode<presentation>
+
+\addtobeamertemplate{frametitle}{}{
+\nointerlineskip%
+% \begin{beamercolorbox}[wd=\paperwidth,colsep=1pt]{lower separation line head}%
+% \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{BFH}
+{
+\leavevmode%
+\hbox{%
+\begin{beamercolorbox}[wd=.33333333\paperwidth,ht=2.25ex,dp=1ex,leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+\usebeamerfont{author in head/foot}\insertshortauthor
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+\usebeamerfont{title in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}}%
+\vskip0pt%
+}
+
+%\defbeamertemplate*{headline}{BFH}{
+%	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+%		leftskip=.3cm,rightskip=.3cm plus1fil,center]{frametitle}
+%	\usebeamerfont{frametitle}%
+%	\end{beamercolorbox}%
+%	\begin{beamercolorbox}[colsep=1pt]{lower separation line head}
+%	\end{beamercolorbox}
+%}
+%
+\setbeamertemplate{navigation symbols}{}
+%
+%\defbeamertemplate*{footline}{BFH}
+%{%
+%	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+%			leftskip=.3cm,rightskip=.3cm plus1fil,center]{title in head/foot}%
+%		\usebeamerfont{title in head/foot}%
+%		Universität Stuttgart\hfill\insertshortinstitute\hfill%
+%	\end{beamercolorbox}%
+%	\begin{beamercolorbox}[colsep=2pt]{middle separation line foot}
+%	\end{beamercolorbox}
+%	\begin{beamercolorbox}[ht=2pt]{title in head/foot}%
+%	\end{beamercolorbox}%
+%}
+
+\mode<all>

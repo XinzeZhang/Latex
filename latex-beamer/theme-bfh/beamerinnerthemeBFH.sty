@@ -1,0 +1,42 @@
+\mode <presentation>
+
+\defbeamertemplate*{title page}{BFH}{
+	% % \vspace*{5mm}
+	% \begin{flushright}
+	% 	\includegraphics[height=15mm]{./images/hust-logo.png}\par
+	% \end{flushright}
+	% % \vspace*{5mm}
+
+\vspace{4em}
+
+% \begin{beamercolorbox}[wd=\paperwidth,ht=.4ex]{upper separation line head}
+% \end{beamercolorbox}%
+
+\nointerlineskip
+\begin{beamercolorbox}[wd=\paperwidth,ht=4em,dp=1.1em,center]{title}
+	\usebeamerfont{title}\strut\inserttitle\strut\par
+	\vspace{1ex}
+	\usebeamerfont{subtitle}\insertsubtitle\par
+\end{beamercolorbox}
+
+\nointerlineskip
+
+% \begin{beamercolorbox}[wd=\paperwidth,ht=.4ex]{lower separation line head}
+% \end{beamercolorbox}%
+
+\begin{center}
+	\usebeamerfont{author}\insertauthor\par
+	\vspace{2ex}
+	\usebeamerfont{institute}\insertinstitute\par
+	\vspace{2ex}
+	\usebeamerfont{institute}\insertdate\par
+	% \vspace{2ex}
+	\vspace{3ex}
+
+	\inserttitlegraphic\par
+\end{center}
+}
+
+\setbeamertemplate{section in toc}[square]
+
+\mode <all>
