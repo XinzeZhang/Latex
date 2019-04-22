@@ -13,12 +13,19 @@
 % \end{beamercolorbox}%
 
 \nointerlineskip
-\begin{beamercolorbox}[wd=\paperwidth,ht=4em,dp=1.1em,center]{title}
-	\usebeamerfont{title}\strut\inserttitle\strut\par
-	\vspace{1ex}
-	\usebeamerfont{subtitle}\insertsubtitle\par
-\end{beamercolorbox}
+\begin{beamercolorbox}[wd=\paperwidth,ht=5em,dp=0em,center]{title}
+	\vbox to 5em{
+		\vfil
+		\usebeamerfont{title}\strut\inserttitle\strut\par
+		% \vspace{1ex}
+		\usebeamerfont{subtitle}\insertsubtitle\par
+		\vfil
+	}
 
+\end{beamercolorbox}
+% \begin{beamercolorbox}[wd=\paperwidth,center]{title}
+% 	\usebeamerfont{subtitle}\insertsubtitle\par
+% \end{beamercolorbox}
 \nointerlineskip
 
 % \begin{beamercolorbox}[wd=\paperwidth,ht=.4ex]{lower separation line head}
@@ -29,6 +36,8 @@
 	\vspace{2ex}
 	\usebeamerfont{institute}\insertinstitute\par
 	\vspace{2ex}
+	% \usebeamerfont{institute}\insertemail\par
+	\vspace{1ex}
 	\usebeamerfont{institute}\insertdate\par
 	% \vspace{2ex}
 	\vspace{3ex}
