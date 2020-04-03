@@ -90,7 +90,11 @@
   pdfkeywords={}
 }
 \RequirePackage{xeCJK}
-\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+% mainfont config for Windows
+% \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+
+% mainfont config for macOS
+\setCJKmainfont[BoldFont=STHeiti, ItalicFont=STKaiti]{STSong}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -163,7 +167,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\kaishu[
   Path=\@fontdir,

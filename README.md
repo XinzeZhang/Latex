@@ -70,7 +70,7 @@ tlmgr -gui -gui-lang zh_CN
 
 原因在于hustreport/hustthesis默认使用thuthesis.bst，而在texlive2017下，/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis下的bst文件为thuthesis-numeric.bst和thuthesis-author-year.bst，在bibtex编译时找不到thuthesis.bst文件，导致latex-toolchain/latex-recipes停止报错。
 
-解决办法为在texlive2016的解压包中，找到thuthesis.bst文件，或找到本仓库的./latex-template/hust-thesis文件夹内已下载的thuthesis.bst文件，复制到/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis路径下，然后sudo texhash刷新索引，即可解决因缺失thuthesis.bst带来的编译报错问题。
+解决办法为在texlive2016的解压包中，找到thuthesis.bst文件，或找到本仓库的./latex-word/hust-thesis文件夹内已下载的thuthesis.bst文件，复制到/usr/local/texlive/2017/texmf-dist/bibtex/bst/thuthesis路径下，然后sudo texhash刷新索引，即可解决因缺失thuthesis.bst带来的编译报错问题。
 
 如果在MacOS下，使用VS Code进行format报错，请安装以下插件
 ```
@@ -79,4 +79,14 @@ sudo cpan Log::Dispatch
 sudo cpan YAML::Tiny
 sudo cpan File::HomeDir
 sudo cpan Unicode::GCString
+```
+如果遇到了缺失字体报错，请安装相应缺失字体后，刷新字体缓存
+* Refresh the cache of fonts(Ubuntu):
+```
+$ fc-cache -fv
+```
+* Refresh the cache of fonts(Mac):
+```
+$ brew install fontconfig
+$ fc-cache -fv
 ```
