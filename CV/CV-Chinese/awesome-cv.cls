@@ -620,6 +620,24 @@
   \end{tabular*}%
 }
 
+\newcommand*{\cvfunding}[1]{%
+  \vspace{2.5mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} &  \\
+    % \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#2}}
+  \end{tabular*}%
+}
+\newcommand*{\cvsubfunding}[2]{%
+\vspace{-3.0mm}
+\setlength\tabcolsep{0pt}
+\setlength{\extrarowheight}{0pt}
+\begin{tabular*}{\textwidth - 5.5ex}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm - 1em} R{4.5cm}}
+  \descriptionstyle{#1} & \descriptionstyle{#2} 
+\end{tabular*}%
+}
+
 % Define an entry of cv papers
 % Usage: \cvpapers{<description>}
 \newcommand*{\cvpapers}[1]{%
@@ -670,8 +688,7 @@
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
-  \vspace{1.0mm}
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3}  \rule{0pt}{2.5ex}\\
 }
 
 % Define an environment for cvskill
